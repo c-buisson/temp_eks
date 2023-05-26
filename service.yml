@@ -3,7 +3,10 @@ kind: Service
 metadata:
   name: simple-http
   namespace: argocd
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: test-simple.dev.kyte-internal.com
 spec:
+  type: LoadBalancer
   selector:
     app: simple-http
   ports:
